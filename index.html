@@ -1,12 +1,15 @@
-
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para mi cielito bello ♡</title>
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -24,8 +27,13 @@ main {
   padding: 55px 12px;
 }
 
-h1 { font-size: clamp(30px, 7vw, 45px); }
-p { line-height: 1.9; }
+h1 {
+  font-size: clamp(30px, 7vw, 45px);
+}
+
+p {
+  line-height: 1.9;
+}
 
 .heart {
   position: fixed;
@@ -33,10 +41,13 @@ p { line-height: 1.9; }
   animation: float 8s linear infinite;
   pointer-events: none;
   opacity: .65;
+  z-index: 0;
 }
 
 @keyframes float {
-  to { transform: translateY(-110vh) rotate(25deg); }
+  to {
+    transform: translateY(-110vh) rotate(25deg);
+  }
 }
 
 .envelope {
@@ -81,6 +92,12 @@ button {
   color: white;
   font-size: 16px;
   cursor: pointer;
+  font-family: Georgia, serif;
+}
+
+button:hover {
+  background: #d977a0;
+  transform: scale(1.03);
 }
 
 #letter {
@@ -91,24 +108,62 @@ button {
   padding: 28px 23px;
   text-align: left;
   box-shadow: 0 8px 30px #d78da922;
+  position: relative;
+  z-index: 1;
 }
 
-#letter.show { display: block; animation: appear .8s ease; }
+#letter.show {
+  display: block;
+  animation: appear .8s ease;
+}
 
 @keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-footer { margin-top: 40px; font-size: 13px; }
+.dino-image {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 25px auto 5px;
+  border: 3px solid #f4c4d5;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px #d78da922;
+}
+
+.dino-caption {
+  text-align: center;
+  font-size: 14px;
+  color: #c16d91;
+  margin-top: 12px;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 13px;
+}
 </style>
 </head>
+
 <body>
+
 <main>
   <div style="font-size:35px">🎀 ♡ 🎂 ♡ 🎀</div>
+
   <h1>feliz cumpleaños,<br>mi cielito bello ♡</h1>
-  <p>hoy es un día muy especial para ti,<br>
-  y preparé una cosita con mucho amor.</p>
+
+  <p>
+    hoy es un día muy especial para ti,<br>
+    y preparé una cosita con mucho amor.
+  </p>
 
   <div class="envelope" id="envelope" onclick="openLetter()">
     <div class="seal">💌</div>
@@ -118,37 +173,83 @@ footer { margin-top: 40px; font-size: 13px; }
 
   <section id="letter">
     <h2 style="text-align:center">para mi niña hermosa ♡</h2>
+
     <p>Feliz cumpleaños, mi cielito bello. ♡</p>
-    <p>Te quiero desear un feliz y lindo cumpleaños, que cumplas muchos años más junto a mí y que el próximo año pueda estar a tu lado para deseártelo una vez más.</p>
-    <p>Este es el segundo cumpleaños que comparto contigo y me pone muy feliz ser yo tu pareja y poder estar aquí contigo una vez más.</p>
-    <p>Quisiera poder darte un abrazo profundo y lindo, seguido de un beso, y estar tomado de tu mano mientras compartimos este día tan especial para ti.</p>
-    <p>Realmente te deseo el mejor día, que todo sea súper bonito en tu glorioso día y que puedas disfrutarlo mucho. Me hace feliz pensar que pronto podremos pasarla juntos.</p>
+
+    <p>
+      Te quiero desear un feliz y lindo cumpleaños,
+      que cumplas muchos años más junto a mí y que
+      el próximo año pueda estar a tu lado para
+      deseártelo una vez más.
+    </p>
+
+    <p>
+      Este es el segundo cumpleaños que comparto
+      contigo y me pone muy feliz ser yo tu pareja
+      y poder estar aquí contigo una vez más.
+    </p>
+
+    <p>
+      Quisiera poder darte un abrazo profundo y lindo,
+      seguido de un beso, y estar tomado de tu mano
+      mientras compartimos este día tan especial para ti.
+    </p>
+
+    <p>
+      Realmente te deseo el mejor día, que todo sea
+      súper bonito en tu glorioso día y que puedas
+      disfrutarlo mucho. Me hace feliz pensar que
+      pronto podremos pasarla juntos.
+    </p>
+
     <p>Te amo mucho, cielo. u.u ♡</p>
-    <p style="text-align:center;font-size:25px">♡ 🎀 ♡</p>
+
+    <p style="text-align:center;font-size:25px">
+      ♡ 🎀 ♡
+    </p>
+
+    <img
+      class="dino-image"
+      src="https://images.openai.com/static-rsc-4/R1LmK4Ho715wQgjsU4pecHAWxWH9p_CBTbHfJzVZAqvsunJBH-DGnxAYlHiaLLvhvaaKWDKEPrm2gxuCY4jwQffws9KvzUi7QVaHxoC2s6OG2Gy4362aiQ-wsrQ_BP92OjpTwzwvdVeZU4ZcrUc3kp16hpbjffHfuVktmkbEysDALfvYG4V8ScUKTUvrNvMA?purpose=fullsize"
+      alt="dinosauritos enamorados"
+    >
+
+    <p class="dino-caption">
+      un amor más bonito que cualquier cuento ♡ 🦖
+    </p>
+
   </section>
 
-  <footer>hecho especialmente para ti, con amor ♡</footer>
+  <footer>
+    hecho especialmente para ti, con amor ♡
+  </footer>
 </main>
 
 <script>
 function openLetter() {
   document.getElementById("envelope").classList.add("open");
   document.getElementById("letter").classList.add("show");
+
   document.getElementById("letter").scrollIntoView({
-    behavior: "smooth", block: "start"
+    behavior: "smooth",
+    block: "start"
   });
 }
 
 for (let i = 0; i < 16; i++) {
   const heart = document.createElement("div");
+
   heart.className = "heart";
   heart.textContent = ["♡", "♥", "💕", "୨୧"][i % 4];
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDelay = Math.random() * 8 + "s";
   heart.style.animationDuration = (6 + Math.random() * 7) + "s";
   heart.style.fontSize = (15 + Math.random() * 18) + "px";
+
   document.body.appendChild(heart);
 }
 </script>
+
 </body>
 </html>
+```
