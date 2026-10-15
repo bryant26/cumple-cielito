@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi cielito bello ♡</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #fff0f5;
+  color: #874b65;
+  font-family: Georgia, serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+main {
+  width: min(92%, 600px);
+  margin: auto;
+  padding: 55px 12px;
+}
+
+h1 { font-size: clamp(30px, 7vw, 45px); }
+p { line-height: 1.9; }
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  animation: float 8s linear infinite;
+  pointer-events: none;
+  opacity: .65;
+}
+
+@keyframes float {
+  to { transform: translateY(-110vh) rotate(25deg); }
+}
+
+.envelope {
+  position: relative;
+  width: 220px;
+  height: 145px;
+  margin: 65px auto 35px;
+  background: #f2a9c5;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px #d78da955;
+}
+
+.envelope:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f8c6d9;
+  clip-path: polygon(0 0, 50% 60%, 100% 0);
+  transition: transform .6s;
+  transform-origin: top;
+  z-index: 2;
+}
+
+.envelope.open:before {
+  transform: rotateX(180deg);
+}
+
+.seal {
+  position: absolute;
+  top: 48%;
+  left: 42%;
+  font-size: 36px;
+  z-index: 3;
+}
+
+button {
+  border: 0;
+  border-radius: 30px;
+  padding: 14px 24px;
+  background: #e88eb1;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#letter {
+  display: none;
+  background: #fffaf7;
+  border: 1px solid #f4c4d5;
+  border-radius: 18px;
+  padding: 28px 23px;
+  text-align: left;
+  box-shadow: 0 8px 30px #d78da922;
+}
+
+#letter.show { display: block; animation: appear .8s ease; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+footer { margin-top: 40px; font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <div style="font-size:35px">🎀 ♡ 🎂 ♡ 🎀</div>
+  <h1>feliz cumpleaños,<br>mi cielito bello ♡</h1>
+  <p>hoy es un día muy especial para ti,<br>
+  y preparé una cosita con mucho amor.</p>
+
+  <div class="envelope" id="envelope" onclick="openLetter()">
+    <div class="seal">💌</div>
+  </div>
+
+  <button onclick="openLetter()">abrir mi cartita ♡</button>
+
+  <section id="letter">
+    <h2 style="text-align:center">para mi niña hermosa ♡</h2>
+    <p>Feliz cumpleaños, mi cielito bello. ♡</p>
+    <p>Te quiero desear un feliz y lindo cumpleaños, que cumplas muchos años más junto a mí y que el próximo año pueda estar a tu lado para deseártelo una vez más.</p>
+    <p>Este es el segundo cumpleaños que comparto contigo y me pone muy feliz ser yo tu pareja y poder estar aquí contigo una vez más.</p>
+    <p>Quisiera poder darte un abrazo profundo y lindo, seguido de un beso, y estar tomado de tu mano mientras compartimos este día tan especial para ti.</p>
+    <p>Realmente te deseo el mejor día, que todo sea súper bonito en tu glorioso día y que puedas disfrutarlo mucho. Me hace feliz pensar que pronto podremos pasarla juntos.</p>
+    <p>Te amo mucho, cielo. u.u ♡</p>
+    <p style="text-align:center;font-size:25px">♡ 🎀 ♡</p>
+  </section>
+
+  <footer>hecho especialmente para ti, con amor ♡</footer>
+</main>
+
+<script>
+function openLetter() {
+  document.getElementById("envelope").classList.add("open");
+  document.getElementById("letter").classList.add("show");
+  document.getElementById("letter").scrollIntoView({
+    behavior: "smooth", block: "start"
+  });
+}
+
+for (let i = 0; i < 16; i++) {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.textContent = ["♡", "♥", "💕", "୨୧"][i % 4];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDelay = Math.random() * 8 + "s";
+  heart.style.animationDuration = (6 + Math.random() * 7) + "s";
+  heart.style.fontSize = (15 + Math.random() * 18) + "px";
+  document.body.appendChild(heart);
+}
+</script>
+</body>
+</html>
